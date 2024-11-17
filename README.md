@@ -55,7 +55,11 @@ cd ..\proa-client
 npm install
 ```
 
-### 5. Start the React Application
+### 5. Supply the Google Maps API key
+
+Open the App.js file and add your Google Maps API key on line 75 if you want to remove the watermark.
+
+### 6. Start the React Application
 
 Start the React app in development mode. This will run the app on `http://localhost:3000` by default.
 
@@ -63,7 +67,7 @@ Start the React app in development mode. This will run the app on `http://localh
 npm start
 ```
 
-### 6. Access the Application
+### 7. Access the Application
 
 - Open the React application at:
   ```
