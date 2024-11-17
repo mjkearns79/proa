@@ -1,4 +1,4 @@
-# PROA Project Setup and Data Initialization
+# PROA Project Setup and Data Initialisation
 
 This guide provides instructions for setting up and initialising data for the PROA ASP.NET Core backend (`ProaServer`) and React frontend (`proa-client`) project.
 
