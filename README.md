@@ -18,22 +18,6 @@ https://github.com/mjkearns79/proa.git
 4. **SQL Server** - A running instance of SQL Server is required for data storage.
 5. **Data Files** - Ensure that all required data files are placed in the `c:\proa` directory, as the `DataSetup.sql` script expects them in this location. If you wish to use a different location, update the file paths in `DataSetup.sql` accordingly.
 
-## Directory Structure
-
-The main components of this project are organized as follows:
-
-```
-c:\proa\source
-│   .gitignore
-│   DataSetup.sql
-│   README.md
-│
-├───.github
-├───proa-client       # React frontend
-└───ProaServer        # ASP.NET Core backend
-    └───ProaServer.sln # Solution file for Visual Studio
-```
-
 ## Initial Setup
 
 ### 1. Clone the Repository
