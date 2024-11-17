@@ -26,10 +26,31 @@ namespace ProaServer.Controllers
                 ws.Portfolio,
                 ws.State,
                 ws.Latitude,
-                ws.Longitude
+                ws.Longitude,
+                Type = GetStationType(ws.Site)
             }).ToListAsync();
 
             return Ok(weatherStations);
+        }
+
+        private static string GetStationType(string site)
+        {
+            if (site.ToLower().Contains("solar"))
+            {
+                return "Solar";
+            }
+            else if (site.ToLower().Contains("wind"))
+            {
+                return "Wind";
+            }
+            else if (site.ToLower().Contains("hub"))
+            {
+                return "Hub";
+            }
+            else
+            {
+                return "Other";
+            }
         }
     }
 }
