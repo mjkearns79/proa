@@ -30,7 +30,7 @@ Desktop.ini
 $RECYCLE.BIN/
 
 .vscode/
-.vs/
+.vs/*
 
 **/[Pp]ackages/*
 !**/[Pp]ackages/build/
