@@ -18,17 +18,28 @@ namespace ProaServer.Controllers
         [HttpGet]
         public async Task<IActionResult> GetWeatherStations()
         {
-            var weatherStations = await _context.WeatherStations.Select(ws => new
-            {
-                ws.Id,
-                ws.WsName,
-                ws.Site,
-                ws.Portfolio,
-                ws.State,
-                ws.Latitude,
-                ws.Longitude,
-                Type = GetStationType(ws.Site)
-            }).ToListAsync();
+            var weatherStations = await _context.WeatherStations
+                .Select(ws => new
+                {
+                    ws.Id,
+                    ws.WsName,
+                    ws.Site,
+                    ws.Portfolio,
+                    ws.State,
+                    ws.Latitude,
+                    ws.Longitude,
+                    Type = GetStationType(ws.Site),
+                    LatestMeasurements = _context.Measurements
+                        .Where(m => m.WeatherStationId == ws.Id)
+                        .GroupBy(m => m.VarId)
+                        .Select(g => new
+                        {
+                            Variable = _context.Variables.FirstOrDefault(v => v.VarId == g.Key),
+                            LatestMeasurement = g.OrderByDescending(m => m.Timestamp).FirstOrDefault()
+                        })
+                        .ToList()
+                })
+                .ToListAsync();
 
             return Ok(weatherStations);
         }
