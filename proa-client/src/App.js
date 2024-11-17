@@ -72,7 +72,7 @@ function App() {
         </select>
       </div>
 
-      <LoadScript googleMapsApiKey="AIzaSyAGxmjHtb5p5PC48xwV7HFWCFDewqWJMok">
+      <LoadScript googleMapsApiKey="YOUR_GOOGLE_API_KEY_HERE">
         <GoogleMap
           mapContainerStyle={{ height: '100vh', width: '100%' }}
           zoom={5}
