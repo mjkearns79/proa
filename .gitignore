@@ -7,6 +7,7 @@
 mono_crash.*
 
 .vscode/
+ProaServer/.vs
 
 [Dd]ebug/
 [Dd]ebugPublic/
@@ -28,9 +29,6 @@ ehthumbs.db
 Desktop.ini
 
 $RECYCLE.BIN/
-
-.vscode/
-.vs/*
 
 **/[Pp]ackages/*
 !**/[Pp]ackages/build/
